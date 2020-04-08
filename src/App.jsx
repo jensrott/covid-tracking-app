@@ -20,8 +20,9 @@ const App = () => {
     const urlAll = 'https://corona.lmao.ninja/all'
     axios.all([axios.get(url), axios.get(urlAll)])
       .then(res => {
-        console.log(res.data)
-        setCountries(res[0].data);
+        console.log(res);
+        let sortedData = res[0].data.sort((a, b) => a.country.localeCompare(b.country));
+        setCountries(sortedData);
         setAllCountriesData(res[1].data);
       })
       .catch(err => console.log(err))
@@ -87,6 +88,16 @@ const App = () => {
     }
     return x1 + x2;
   }
+
+  const sortDataAlphabetical = () => {
+      // countries.map((country, index) => (
+      //   <MenuItem key={index} value={country.country}>{country.country}</MenuItem>
+      // ))
+      // let sortedData = countries.sort((a, b) => a.country.localCompare(b.country))
+      // console.log(sortedData);
+  }
+
+  sortDataAlphabetical();
 
   // Selected a country
   const renderSelectedCountryContent = () => {
