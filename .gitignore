@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 notes.md
+deploy_web.sh
+# Local Netlify folder
+.netlify
