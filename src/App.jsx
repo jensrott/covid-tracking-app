@@ -169,7 +169,7 @@ const App = () => {
         <Container maxWidth="md" >
           <Paper className={classes.paper}>
             <Typography variant="h2" component="h2" gutterBottom>
-              World
+              <span className={classes.bold}>World</span>
             </Typography>
             <Typography>
               Last update: <span className={classes.bold}>{dateWorld}</span>
