@@ -16,8 +16,8 @@ const App = () => {
   const [allCountriesData, setAllCountriesData] = useState({});
 
   useEffect(() => {
-    const url = 'https://corona.lmao.ninja/countries'
-    const urlAll = 'https://corona.lmao.ninja/all'
+    const url = 'https://corona.lmao.ninja/v2/countries'
+    const urlAll = 'https://corona.lmao.ninja/v2/all'
     axios.all([axios.get(url), axios.get(urlAll)])
       .then(res => {
         console.log(res);
@@ -30,7 +30,7 @@ const App = () => {
 
   const handleChange = (event) => {
     setSelectedCountry(event.target.value);
-    let url = 'https://corona.lmao.ninja/countries'
+    let url = 'https://corona.lmao.ninja/v2/countries'
     axios.get(`${url}/${event.target.value}`)
       .then(res => {
         console.log(res.data);
